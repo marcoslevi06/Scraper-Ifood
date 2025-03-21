@@ -55,15 +55,15 @@ class Microrregiao(Scraper):
         if nome_da_cidade_da_microrregiao is not None:
             self.nome_cidade = nome_da_cidade_da_microrregiao
 
-        time_a = random.uniform(1.5, 2.5)
-        time_b = random.uniform(1.5, 2.5)
+        time_a = random.uniform(1.0, 2.2)
+        time_b = random.uniform(1.0, 2.2)
 
         farmacia = False
         mercado = False
 
         navegador = self.create_browser()
         navegador.get(self.BASE_URL)
-        sleep(2)
+        sleep(3)
 
         # Clicando no botão de busca por endereço.
         button = navegador.find_element(By.CSS_SELECTOR, "button.address-search-input__button[aria-label='Buscar endereço e número']")

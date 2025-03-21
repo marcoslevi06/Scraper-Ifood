@@ -11,16 +11,16 @@ if __name__ == "__main__":
         SAÍDA:
             - Planilha com as cidades da microrregião com farmácias e mercados
 
-        O projeto apenas necessida que você informeo codcidade_IBGE, nome da cidade e UF,
+        O projeto apenas necessida que você informe o codcidade_IBGE, nome da cidade e UF,
         desse modo, o projeto irá verificar todas as cidades da microrregião e verificar se
         possuem farmácias e mercados listados no Ifood.
 
-        Ao final, o projeto irá gerar uma planilha com as cidades da microrregião irformando
+        Ao final, será gerado uma planilha com as cidades da microrregião irformando
         quais cidades possuem farmácias e mercados.
     '''
 
-    codcidade_verificada = 2304103
-    cidade_verificada = "Crateús"
+    codcidade_verificada = 2933406
+    cidade_verificada = "Wagner"
     uf = None
     
     cidades_microrregiao = Microrregiao(
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     df.to_excel(f"Cidades/{cidade_verificada}_{codcidade_verificada}.xlsx", index=False)
 
     for cidade, codcidade in dicionario_cidades.items():
-        time_sleep = random.randint(3, 5)
+        time_sleep = random.randint(2, 3)
         sleep(time_sleep)
         try:
             temp_df = cidades_microrregiao.verifica_cidades_com_ifood(dataframe=df,
@@ -48,9 +48,6 @@ if __name__ == "__main__":
             print(f"Erro ao verificar a cidade {cidade}.")
             print(f"{erro}")    
             continue
-        
-        df = temp_df
-
 
     df = df[["Nome_UF", "Nome_Microrregião", "Nome_Município", "Código Município Completo", "Mercados", "Farmácias"]]
     df.to_excel(f"Cidades/{cidade_verificada}_{codcidade_verificada}.xlsx", index=False)
