@@ -19,8 +19,8 @@ if __name__ == "__main__":
         quais cidades possuem farmácias e mercados.
     '''
 
-    codcidade_verificada = 2933059
-    cidade_verificada = "Várzea Roça"
+    codcidade_verificada = 2304103
+    cidade_verificada = "Crateús"
     uf = None
     
     cidades_microrregiao = Microrregiao(
@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     df = cidades_microrregiao.verificar_cidades_microrregiao()
     dicionario_cidades = dict(zip(df["Nome_Município"], df["Código Município Completo"]))
-    df.to_excel(f"{cidade_verificada}_{codcidade_verificada}.xlsx", index=False)
+    df.to_excel(f"Cidades/{cidade_verificada}_{codcidade_verificada}.xlsx", index=False)
 
     for cidade, codcidade in dicionario_cidades.items():
         time_sleep = random.randint(3, 5)
@@ -53,6 +53,7 @@ if __name__ == "__main__":
 
 
     df = df[["Nome_UF", "Nome_Microrregião", "Nome_Município", "Código Município Completo", "Mercados", "Farmácias"]]
-    df.to_excel(f"{cidade_verificada}_{codcidade_verificada}.xlsx", index=False)
+    df.to_excel(f"Cidades/{cidade_verificada}_{codcidade_verificada}.xlsx", index=False)
+
 
     

@@ -1,0 +1,98 @@
+Jutaí	 - AM → Adicionado sefaz nota gaucha
+
+Xique-Xique	BA → Grupo 20 sefaz nota gaucha
+
+Várzea da Roça	BA → Grupo 40 sefaz nota gaucha
+
+WAGNER	BA → Grupo 41 sefaz nota gaucha
+
+Bom Jesus de Goiás	GO → Adicionado sefaz parceiro
+
+Rio Pardo de Minas	MG → Adicionado sefaz parceiro
+
+ARAXÁ	MG → Adicionado sefaz parceiro
+
+São João da Lagoa	MG → Não tem sefaz parceiro pra cidade, adicionado Monte Carlos (microrregião do cliente)
+
+Maria da Fé	MG → Não tem sefaz parceiro pra cidade, adicionado Itajubá (microrregiao do cliente)
+
+Montes Claros	MG → Adicionado sefaz parceiro
+
+ITAPEVA	MG → Adicionado sefaz parceiro
+
+RAUL SOARES	MG → Adicionado sefaz parceioro
+
+São Francisco de Sales	MG → Adicionado sefaz parceiro
+
+CATAGUASES	MG → Adicionado sefaz parceiro
+
+Camanducaia	MG → Adicionado sefaz parceiro
+
+Grão Mogol	MG →  Não tem sefaz parceiro pra cidade e nem pra microrregião. Cidade mais próxima é Montes Claros (adicionada no sefaz parceiro)
+
+Berilo	MG → Adicionado sefaz parceiro
+
+Itapagipe	MG → Adicionado sefaz parceiro
+
+GUANHÃES	MG → Adicionado sefaz parceiro
+
+Serra Azul de Minas	MG → Não tem sefaz parceiro pra cidade, adicionado Serro (Microrregião do cliente)
+
+Capetinga	MG → Não tem sefaz parceiro pra cidade, adicionado a cidade Passos (microrregião do cliente)
+
+Felício dos Santos	MG → Adicionado sefaz parceiro
+
+Bom Jardim de Minas	MG → Adicionado sefaz parceiro
+
+SAO JOAO DO MANHUACU	MG → Adicionado sefaz parceiro
+
+Carpina	PE → Sefaz nota gaucha grupo 19
+
+QUATIGUÁ	PR →  Adicionado sefaz nota gaucha grupo 36
+
+São Pedro da Aldeia	RJ → Sefaz nota gaucha grupo 7 e adicionado sefaz parceiro
+
+Piratuba	SC → Adicionado sefaz parceiro
+
+Ribeirópolis	SE → Adicionaro sefaz nota gaucha grupo 3 e sefaz parceiro
+
+SOROCABA	SP → Adicionado sefaz parceiro
+
+São Paulo	SP → Adicionado sefaz parceiro
+
+BOM JESUS DOS PERDOES	SP → Adicionado sefaz parceiro
+
+São José do Rio Pardo	SP → Adicionado sefaz parceiro
+
+PEDREIRA	SP → Adicionado sefaz parceiro
+
+HORTOLÂNDIA	SP → Adicionado sefaz parceiro
+
+Assis	SP → Adicionado sefaz parceiro
+
+OURINHOS	SP → Adicionado sefaz parceiro
+
+Mogi das Cruzes	SP → Adicionado sefaz parceiro
+
+Louveira	SP → Adicionado sefaz parceiro
+
+PINDAMONHANGABA	SP → Adicionado sefaz parceiro
+
+Caraguatatuba	SP → Adicionado sefaz parceiro
+
+IBIÚNA	SP → Adicionado sefaz parceiro
+
+Cubatão	SP → Adicionado sefaz parceiro
+
+Monte Azul Paulista	SP → Adicionado sefaz parceiro
+
+Embu das Artes	SP → Adicionado sefaz parceiro
+
+Praia Grande	SP → Adicionado sefaz parceiro
+
+Mauá	SP → Adicionado sefaz parceiro
+
+Mairinque	SP → Adicionado sefaz parceiro
+
+Palmas	TO → Sefaz notagaucha grupo 1
+
