@@ -7,6 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
+import random
 
 
 class Microrregiao(Scraper):
@@ -15,14 +16,17 @@ class Microrregiao(Scraper):
     def __init__(self, nome_cidade : str, uf_estado : str = None, codcidade : str = None):
         self.nome_cidade = nome_cidade
         self.codcidade = codcidade
-        self.uf_estado = uf_estado 
+        self.uf_estado = uf_estado # Atualmente não está sendo utilizado, mas pode ser útil para futuras implementações.
         self.BASE_URL = "https://www.ifood.com.br/inicio"
         self.ponto_de_referencia = "Praça"
+        self.bairro = "Centro"
 
 
     def verificar_cidades_microrregiao(self):
         '''
-            # ["python", "adicionar_concorrentes.py", "'SAO-JOAO-DE-MERETI-RJ'"]
+            ["python", "adicionar_concorrentes.py", "'SAO-JOAO-DE-MERETI-RJ'"]
+
+            Devolve um dataframe com as cidades da microrregião baseado no código da cidade.
         '''
 
         codcidade = self.codcidade
@@ -32,11 +36,8 @@ class Microrregiao(Scraper):
         microregiao = df[df["Código Município Completo"] == codcidade].iloc[0]["Nome_Microrregião"]
 
         df_cidades = df[df["Nome_Microrregião"] == microregiao][["Nome_UF", "Nome_Microrregião", "Código Município Completo", "Nome_Município"]]
-
         cidades_reorganizado = df_cidades[["Nome_Município", "Código Município Completo", "Nome_UF", "Nome_Microrregião"]]
-        
         cidades_reorganizado["Código Município Completo"] = cidades_reorganizado["Código Município Completo"].astype(str).astype(str).replace(",", "", regex=True)
-        
         cidades_reorganizado["Nome_Município"] = cidades_reorganizado["Nome_Município"] + " - " + cidades_reorganizado["Nome_UF"]
         
         return cidades_reorganizado
@@ -50,8 +51,12 @@ class Microrregiao(Scraper):
             Método para verificar as cidades com farmácias e mercados 
             atuantes no iFood.
         '''
+
         if nome_da_cidade_da_microrregiao is not None:
             self.nome_cidade = nome_da_cidade_da_microrregiao
+
+        time_a = random.uniform(1.5, 2.5)
+        time_b = random.uniform(1.5, 2.5)
 
         farmacia = False
         mercado = False
@@ -64,7 +69,7 @@ class Microrregiao(Scraper):
         button = navegador.find_element(By.CSS_SELECTOR, "button.address-search-input__button[aria-label='Buscar endereço e número']")
         button.click()
         # print("Clicou no botão de busca.")
-        sleep(2)
+        sleep(random.uniform(time_a, time_b))
 
         
         # iframes = navegador.find_elements(By.TAG_NAME, "iframe")
@@ -101,6 +106,7 @@ class Microrregiao(Scraper):
             EC.element_to_be_clickable((By.CSS_SELECTOR, ".address-search-list li:first-child button"))
         )
         primeiro_botao.click()
+        sleep(random.uniform(time_a, time_b))
 
         # Clicandona confirmação de local.
         botao_confirmar_localizacao = wait.until(
@@ -108,15 +114,28 @@ class Microrregiao(Scraper):
         )
         botao_confirmar_localizacao.click()
 
+        # Verificando se o bairro foi exibido. Não necessariamente ele é pedido em todas as cidades.
+        try:
+            wait_bairro = WebDriverWait(navegador, 3)
+            campo_input_bairro = wait_bairro.until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, ".form-input__field[name='district']"))
+            )
+            campo_input_bairro.send_keys(self.bairro)
+        except:
+            print("Bairro não foi solicitado.")
+            pass
+
         # Passando um ponto de localização obrigatório.
         campo_input = wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, ".form-input__field[name='reference']"))
         )
-        # Preenche o campo de input com o valor "praça"
+        sleep(random.uniform(time_a, time_b))
+
         campo_input.send_keys(self.ponto_de_referencia)
         campo_input.send_keys(Keys.RETURN)
+        # sleep(100)
 
-        sleep(2)
+        sleep(random.uniform(time_a, time_b))
 
         soup = BeautifulSoup(navegador.page_source, "html.parser")
         bloco_categorias = soup.find("div", class_="desktop-category-selector__horizontal")
@@ -138,14 +157,14 @@ class Microrregiao(Scraper):
         existe_farmacias = False
 
         if mercado:
-            navegador.get("https://www.ifood.com.br/mercados"); sleep(1)
+            navegador.get("https://www.ifood.com.br/mercados"); sleep(random.uniform(time_a, time_b))
             soup = BeautifulSoup(navegador.page_source, "html.parser")
             lista_de_mercados = soup.find_all("div", class_="merchant-list-v2__item-wrapper")
             if len(lista_de_mercados) > 0:
                 existe_mercados = True
 
         if farmacia:
-            navegador.get("https://www.ifood.com.br/farmacia"); sleep(1)
+            navegador.get("https://www.ifood.com.br/farmacia"); sleep(random.uniform(time_a, time_b))
             soup = BeautifulSoup(navegador.page_source, "html.parser")
             lista_de_farmacias = soup.find_all("div", class_="merchant-list-v2__item-wrapper")
             if len(lista_de_farmacias) > 0:

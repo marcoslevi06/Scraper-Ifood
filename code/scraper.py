@@ -12,6 +12,7 @@ class Scraper():
         '''
         options = Options()
         
+        options.add_argument("--headless")
         # Ativar o modo incognito (sem histórico, cache, cookies)
         options.add_argument("--incognito")
         
@@ -33,8 +34,8 @@ class Scraper():
         options.add_argument("disable-http-cache")
         
         # Usar um perfil de navegador limpo (sem cookies ou cache)
-        options.add_argument("--user-data-dir=/tmp/chrome-user-data")  # Definir o diretório de dados de usuário temporário
-        
+        # options.add_argument("--user-data-dir=/tmp/chrome-user-data")
+
         navegador = webdriver.Chrome(options=options)
 
         return navegador
