@@ -185,4 +185,5 @@ class Microrregiao(Scraper):
         print(f"IFOOD Mercados: {existe_mercados}")
         print(f"IFOOD Farmácias: {existe_farmacias}")
         print("-" * 100)
+        
         return dataframe

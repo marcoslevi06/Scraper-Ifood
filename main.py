@@ -19,13 +19,11 @@ if __name__ == "__main__":
         quais cidades possuem farmácias e mercados.
     '''
 
-    codcidade_verificada = 2933406
-    cidade_verificada = "Wagner"
-    uf = None
+    codcidade_verificada = 3154002
+    cidade_verificada = "Raul Soares"
     
     cidades_microrregiao = Microrregiao(
                             nome_cidade=cidade_verificada, 
-                            uf_estado=uf, 
                             codcidade=codcidade_verificada
                         )
     
@@ -39,11 +37,8 @@ if __name__ == "__main__":
         time_sleep = random.randint(2, 3)
         sleep(time_sleep)
         try:
-            temp_df = cidades_microrregiao.verifica_cidades_com_ifood(dataframe=df,
-                                                                      nome_da_cidade_da_microrregiao=cidade,
-                                                                    #   codcidade=codcidade
-                                                            )
-            df = temp_df
+            df = cidades_microrregiao.verifica_cidades_com_ifood(dataframe=df,nome_da_cidade_da_microrregiao=cidade)
+
         except Exception as erro:
             print(f"Erro ao verificar a cidade {cidade}.")
             print(f"{erro}")    
