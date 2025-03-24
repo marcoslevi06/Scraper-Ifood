@@ -21,27 +21,6 @@ class Microrregiao(Scraper):
         self.ponto_de_referencia = "Praça"
         self.bairro = "Centro"
 
-
-    def verificar_cidades_microrregiao(self):
-        '''
-            ["python", "adicionar_concorrentes.py", "'SAO-JOAO-DE-MERETI-RJ'"]
-
-            Devolve um dataframe com as cidades da microrregião baseado no código da cidade.
-        '''
-
-        codcidade = self.codcidade
-
-        df = pd.read_csv("Files/dados.csv")
-        
-        microregiao = df[df["Código Município Completo"] == codcidade].iloc[0]["Nome_Microrregião"]
-
-        df_cidades = df[df["Nome_Microrregião"] == microregiao][["Nome_UF", "Nome_Microrregião", "Código Município Completo", "Nome_Município"]]
-        cidades_reorganizado = df_cidades[["Nome_Município", "Código Município Completo", "Nome_UF", "Nome_Microrregião"]]
-        cidades_reorganizado["Código Município Completo"] = cidades_reorganizado["Código Município Completo"].astype(str).astype(str).replace(",", "", regex=True)
-        cidades_reorganizado["Nome_Município"] = cidades_reorganizado["Nome_Município"] + " - " + cidades_reorganizado["Nome_UF"]
-        
-        return cidades_reorganizado
-
     
     def verifica_cidades_com_ifood(self,  dataframe : pd.DataFrame, 
                                    nome_da_cidade_da_microrregiao : str = None,
