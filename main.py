@@ -19,8 +19,8 @@ if __name__ == "__main__":
         quais cidades possuem farmácias e mercados.
     '''
 
-    codcidade_verificada = 2304400
-    cidade_verificada = "Fortaleza"
+    codcidade_verificada = 2304103
+    cidade_verificada = "Crateús"
     
     cidades_microrregiao = Microrregiao(
                             nome_cidade=cidade_verificada, 

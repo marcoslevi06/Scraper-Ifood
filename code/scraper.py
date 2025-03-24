@@ -12,7 +12,7 @@ class Scraper():
         '''
         options = Options()
         
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         
         options.add_argument("--incognito")
         
