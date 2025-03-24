@@ -1,8 +1,42 @@
 # Scraper-Ifood
-Esse projeto de estudo utiliza de python, selenium e b4 para praticar conceitos de Web-Scraping. O código analisa quais cidades de uma determinada microrregião possuem empreendimentos farmacêuticos e/ou de supermercados cadastrados no aplicativo.
 
-# Modo de utilizar.
-No arquivo main.py, você pode optar por passar apenas o código de cidade, ou o código de cidade seguido do nome para a criação de um arquivo xlsx na pasta "Cidades". As guardarei e utilizarei como anexo no decorrer da utilização.
+Este projeto de estudo utiliza Python, Selenium e BeautifulSoup (bs4) para praticar conceitos de Web Scraping. O código analisa quais cidades de uma determinada microrregião possuem empreendimentos farmacêuticos e/ou supermercados cadastrados no aplicativo iFood.
 
-# Notas relevantes:
-O site IFOOD é extremamente eficiente na detecção de bots e automações, então, a utilização de pausas de tempo aleatório durante o código são essenciais para seu bom funcionamento.
+# 📌 Funcionalidades
+
+Coleta informações sobre farmácias e supermercados em diferentes cidades.
+
+Gera um arquivo .xlsx com os resultados na pasta Cidades.
+
+Utiliza técnicas para minimizar a detecção de automação pelo iFood.
+
+# 🚀 Como Utilizar
+
+Instale as dependências:
+
+pip install -r requirements.txt
+
+Execute o script main.py:
+
+python main.py <cod_cidade> [nome_cidade]
+
+Se passar apenas <cod_cidade>, o script buscará os dados da cidade correspondente.
+
+Se passar <cod_cidade> nome_cidade, o arquivo gerado terá o nome especificado.
+
+# ⚠️ Notas Importantes
+
+O iFood possui uma forte detecção de bots e automações. Para evitar bloqueios, o código implementa pausas aleatórias entre as requisições.
+
+Caso encontre dificuldades, tente alterar os tempos de espera e revisar os cabeçalhos de requisição do Selenium.
+
+
+# 🛠 Tecnologias Utilizadas
+
+Python
+
+Selenium
+
+BeautifulSoup (bs4)
+
+Pandas (para manipulação de dados e geração de arquivos .xlsx)
