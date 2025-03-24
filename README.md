@@ -40,3 +40,7 @@ Selenium
 BeautifulSoup (bs4)
 
 Pandas (para manipulação de dados e geração de arquivos .xlsx)
+
+# Link de demonstração de execução:
+
+https://photos.app.goo.gl/VJ5p5cgPwKyscveMA
