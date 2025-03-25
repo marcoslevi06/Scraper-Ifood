@@ -1,2 +1,3 @@
 venv/
 Clientes/
+**/__pycache__/
