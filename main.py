@@ -19,8 +19,8 @@ if __name__ == "__main__":
         quais cidades possuem farmácias e mercados.
     '''
 
-    codcidade_verificada = 2412302
-    cidade_verificada = "São José do Campestre"
+    codcidade_verificada = 2501005
+    cidade_verificada = "Araruna"
     
     cidades_microrregiao = Microrregiao(
                             nome_cidade=cidade_verificada, 
