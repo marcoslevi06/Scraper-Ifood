@@ -19,8 +19,8 @@ if __name__ == "__main__":
         quais cidades possuem farmácias e mercados.
     '''
 
-    codcidade_verificada = 2501005
-    cidade_verificada = "Araruna"
+    codcidade_verificada = 3529203
+    cidade_verificada = "Martinópolis"
     
     cidades_microrregiao = Microrregiao(
                             nome_cidade=cidade_verificada, 
